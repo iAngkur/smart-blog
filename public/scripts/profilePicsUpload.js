@@ -73,8 +73,31 @@ window.onload = function () {
         setTimeout(() => {
           baseCropping.croppie("destroy");
         }, 1000);
-      });
+      })
+      .catch(e => {
+        console.log(e)
+        alert("Server Error Occurred")
+      })
   });
+
+  $('#removeProfilePics').on('click', function() {
+    let req = new Request('/uploads/profilePics', {
+      method: "DELETE",
+      node: 'cors'
+    })
+    fetch(req)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("removeProfilePics").style.display = "none";
+        document.getElementById("profilePics").src = data.profilePics;
+        document.getElementById("profilePicsForm").requestFullscreen();
+      })
+      .catch(e => {
+        console.log(e)
+        alert('Server Error Ocurred')
+      })
+  })
+
 };
 
 function generateFileName(name) {

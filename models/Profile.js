@@ -13,7 +13,7 @@ const profileSchema = Schema(
     },
     name: {
       type: String,
-      maxlength: 30,
+      maxlength: 50,
       trim: true,
       required: true,
     },
@@ -21,11 +21,13 @@ const profileSchema = Schema(
       type: String,
       trim: true,
       maxlength: 100,
+      required: true,
     },
     bio: {
       type: String,
       trim: true,
       maxlength: 500,
+      required: true,
     },
     profilePic: String,
     links: {

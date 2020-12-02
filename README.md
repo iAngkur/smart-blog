@@ -21,6 +21,14 @@
 ### Template Engine
 * ejs
 
+### Structure
+* Controllers
+* middlewares
+* models
+* routes
+* validator
+* views
+
 ### Utils:
 * VS Code // Visual Studio Code
 * Chrome // Web browser
